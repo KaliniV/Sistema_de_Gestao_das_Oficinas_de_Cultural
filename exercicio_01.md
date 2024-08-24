@@ -22,8 +22,6 @@ Partindo da ideia que os dados ja existem, a entrega de mais valor seria matricu
 
 # Regra de negócios
 
-- [ ] Cadastro estudantes
-
 - Pessoas a partir de 16 anos (professores e estudantes);
 - Não devo persistir informação de data de nascimento no meu sistema-
 - Não existe restrição para cadastro de pessoas de outras cidades, estados;
