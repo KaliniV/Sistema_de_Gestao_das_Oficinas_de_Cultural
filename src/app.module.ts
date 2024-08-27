@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AlunosController } from './alunos/alunos.controller';
-import { AlunosModule } from './alunos/alunos.module';
+
+import { AlunoService } from './alunos/application/aluno.service';
+import { AlunoModule } from './alunos/application/aluno.module';
+import { AlunoController } from './alunos/presenter/http/alunos.controller';
+import { AppController } from './app.controller';
 
 @Module({
-  imports: [AlunosModule],
-  controllers: [AppController, AlunosController],
-  providers: [AppService],
+  imports: [AlunoModule],
+  controllers: [AppController, AlunoController],
+  providers: [AppService, AlunoService],
 })
 export class AppModule {}

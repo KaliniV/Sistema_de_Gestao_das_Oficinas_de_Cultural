@@ -1,0 +1,1 @@
+{"version":3,"file":"aluno.entity.js","sourceRoot":"","sources":["../../../src/alunos/entities/aluno.entity.ts"],"names":[],"mappings":";;;AAAA,MAAa,KAAK;IAMhB,YAAY,IAAY,EAAE,QAAgB,EAAE,QAAgB;QAC1D,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;QACzB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;QACzB,IAAI,CAAC,MAAM,GAAG,EAAE,CAAC;IACnB,CAAC;CACF;AAZD,sBAYC"}
