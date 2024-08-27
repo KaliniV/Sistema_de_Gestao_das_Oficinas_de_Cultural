@@ -4,6 +4,6 @@ export class CreateAlunoCommand {
     public readonly endereco: string,
     public readonly email: string,
     public readonly telefone: string,
-    public readonly anoNascimento: string,
+    public readonly anoNascimento: number,
   ) {}
 }

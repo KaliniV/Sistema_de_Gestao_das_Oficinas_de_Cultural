@@ -13,15 +13,15 @@ export class CreateAlunoDto {
   @IsString()
   endereco: string;
 
-  @IsString()
-  telefone: string;
-
   @IsNotEmpty()
   @IsEmail()
   email: string;
 
+  @IsString()
+  telefone: string;
+
   @IsNotEmpty()
   @IsPositive()
   @IsNumber()
-  anoDeNascimento: number;
+  anoNascimento: number;
 }

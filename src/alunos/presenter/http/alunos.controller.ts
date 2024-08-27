@@ -1,17 +1,27 @@
-import { Controller, Post, Body } from '@nestjs/common';
-import { AlunosService } from 'src/alunos/application/alunos.service';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { CreateAlunoDto } from './dto/create-aluno.dto';
+import { AlunoService } from '../../application/aluno.service';
+import { CreateAlunoCommand } from '../../application/commands/create-aluno-command';
 
-// a responsabilidade do controller é receber a requisição e responder,
-// a logica não devera ser encontrada no controller, utilizamos validações.
-// createAlunoDto - camada intermediaria objeto que so tem propriedades
-// costuma ter as mesmas coisas que o aluno,
 @Controller('alunos')
-export class AlunosController {
-  constructor(private readonly alunosService: AlunosService) {}
+export class AlunoController {
+  constructor(private readonly alunoService: AlunoService) {}
 
   @Post()
   cadastrar(@Body() createAlunoDto: CreateAlunoDto) {
-    return this.alunosService.cadastrar(createAlunoDto);
+    return this.alunoService.cadastrar(
+      new CreateAlunoCommand(
+        createAlunoDto.nome,
+        createAlunoDto.endereco,
+        createAlunoDto.email,
+        createAlunoDto.telefone,
+        createAlunoDto.anoDeNascimento,
+      ),
+    );
+  }
+
+  @Get()
+  listar() {
+    return this.alunoService.listar();
   }
 }
